@@ -1,0 +1,45 @@
+:root {
+  --bg: #040509;
+  --fg: #e0ecef;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Nunito", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.spiral {
+  position: absolute;
+  left: 50%;
+  /* first spiral slightly higher, second will be moved down by ID rule */
+  top: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+#spiral2 {
+  top: 55%;
+}
+.character {
+  color: var(--fg);
+  font-size: 2.8rem;       /* uses rems if you prefer */
+  text-transform: uppercase;
+  will-change: transform, opacity;
+  display: inline-block;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 490px) {
+  .character {
+    font-size: 2.2rem;
+  }
+}
